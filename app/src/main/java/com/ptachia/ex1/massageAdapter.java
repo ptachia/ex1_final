@@ -17,6 +17,10 @@ public class massageAdapter extends RecyclerView.Adapter<massageAdapter.massageV
 //    private Context mCtx;
     private List<One_massage> massages;
 
+    public List<One_massage> getMassages() {
+        return massages;
+    }
+
     public massageAdapter(List<One_massage> massages) {
         this.massages = massages;
     }

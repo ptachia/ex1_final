@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements MassageDetails.de
     {
         if (last_position != -1)
         {
-            massages.remove(last_position);
+            adapter.getMassages().remove(last_position);
+            adapter.notifyItemRemoved(last_position);
+            adapter.notifyItemRangeChanged(last_position,adapter.getMassages().size());
             last_position = -1;
         }
         getSupportFragmentManager().popBackStack();
