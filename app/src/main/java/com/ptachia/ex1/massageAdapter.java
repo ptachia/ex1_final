@@ -18,8 +18,11 @@ public class massageAdapter extends RecyclerView.Adapter<massageAdapter.massageV
     private List<One_massage> massages;
 
     public massageAdapter(List<One_massage> massages) {
-//        this.mCtx = mCtx;
         this.massages = massages;
+    }
+
+    public void removeOneMsg(int position){
+        massages.remove(position);
     }
 
     public void addMassage(One_massage new_massage){
@@ -41,7 +44,7 @@ public class massageAdapter extends RecyclerView.Adapter<massageAdapter.massageV
         One_massage massage = massages.get(position);
         holder.massage.setText(massage.getMassage());
         holder.myname.setText(R.string.my_name);
-        holder.timestamp.setText(String.valueOf(massage.getTimeStamp()));
+        holder.timestamp.setText(massage.getTimeStamp());
     }
 
     @Override
